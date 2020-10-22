@@ -19,6 +19,29 @@
         }
     }
 
+    &__success-block{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        height: 370px;
+        
+
+        .warning-img{
+            padding-bottom: 30px;
+        }
+        p{
+            opacity: 0.5;
+            letter-spacing: 0.1px;
+            font-size: 18px;
+            line-height: 20px;
+        }
+        h2{
+            padding-bottom: 20px;
+        }
+    }
+
     &__registration-link {
         text-align: center;
         display: block;
