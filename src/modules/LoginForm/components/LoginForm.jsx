@@ -37,7 +37,7 @@ class LoginForm extends Component {
                             <Button size="large" type="primary" >Login</Button>
                         </Form.Item>
 
-                        <Link className="auth__registration-link" to="/registration">Register now</Link>
+                        <Link className="auth__registration-link" to="/reg">Register now</Link>
 
                     </Form>
                 </WhiteBlock>

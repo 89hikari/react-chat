@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 class RegistrationForm extends Component {
     render() {
-        const success = true;
+        const success = false;
         const onFinish = values => {
             console.log('Received values of form: ', values);
         };
@@ -20,16 +20,13 @@ class RegistrationForm extends Component {
 
                     {!success ? (
                         <Form name="normal_login" className="login-form" initialValues={{ remember: true }} onFinish={onFinish}>
-                            <Form.Item hasFeedback name="email">
-                                <Input size="large" validateStatus='success' prefix={<MailOutlined type="mail" />} placeholder="Email" />
-                            </Form.Item>
                             <Form.Item hasFeedback name="username">
                                 <Input size="large" validateStatus='success' prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
                             </Form.Item>
                             <Form.Item name="password" hasFeedback>
                                 <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="Password" size="large" />
                             </Form.Item>
-                            <Form.Item name="password" hasFeedback>
+                            <Form.Item name="password-confirm" hasFeedback>
                                 <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="Confirm password" size="large" />
                             </Form.Item>
                             <Form.Item>
