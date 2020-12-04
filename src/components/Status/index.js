@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types'
-import { Button as BaseButton } from 'antd';
 import classNames from 'classnames';
 
 import './Status.scss';
 
+//онлайн или нет
 const Status = ({online}) => {
         return (
             <div className={classNames("status", {"status--online": online})}>{online ? 'online' : 'offline'}</div>

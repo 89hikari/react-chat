@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types'
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import distanceInWordsToNow  from 'date-fns/distance_in_words_to_now';
+import ruLocale from 'date-fns/locale/ru'
 
-const Time = ({date}) => formatDistanceToNow(date,  {includeSeconds: true}) 
+// время сообщения
+const Time = ({date}) => distanceInWordsToNow(date, {addSuffix: true, locale: ruLocale}) 
 
 Time.propTypes = {
     date: PropTypes.string

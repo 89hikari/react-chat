@@ -3,6 +3,7 @@ import { generateAvatarFromHash } from '../../utils/helpers';
 
 import './Avatar.scss';
 
+// Если аватар есть, то возвращаем его, если нет, то делаем "пустую" аватарку
 const Avatar = user => {
     if (user.user.avatar) {
         return <img class="avatar" src={user.user.avatar} alt={`Avatar ${user.user.fullname}`}/>;

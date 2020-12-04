@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import { Button as BaseButton } from 'antd';
 import classNames from "classnames";
-import checkedImg from 'assets/img/checked.png'
 
 import { Time, IconReaded } from '../';
 
 import './Message.scss';
 
+// определяет какое будет сообщение (моё, собеседника, печатающего собеседника)
 const Message = ({avatar, user, text, date, isMe, isReaded, isTyping}) => {
         return (
             <div className={classNames("message", {"message--isme" : isMe, "message--is-typing" : isTyping})}>

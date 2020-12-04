@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types'
-import { Button as BaseButton } from 'antd';
+import React from 'react';
 import classNames from 'classnames';
-import { Time, IconReaded, Avatar } from '../';
-import { generateAvatarFromHash } from '../../utils/helpers';
+import { IconReaded, Avatar } from '../';
 
 import './DialogItem.scss';
 import { format, isToday } from 'date-fns';
 
+// если получено сегодня - возвращаем час и минуты, если нет, то день + месяц + год
 const getMessageTime = created_at => {
     if (isToday(created_at)) {
         return format(created_at, 'HH:mm');
     } else {
-        return format(created_at, 'dd.MM.yyyy')
+        return format(created_at, 'DD.MM.YYYY')
     }
 };
 
+// один элемент в баре слева
 const DialogItem = ({user, created_at, unreaded, isMe, text}) => {
         return (
             <div className={classNames("dialogs__item", {"dialogs__item--online": user.isOnline})}>
