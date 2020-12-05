@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import classNames from "classnames";
+import {Avatar} from '../'
 
 import { Time, IconReaded } from '../';
 
 import './Message.scss';
 
 // определяет какое будет сообщение (моё, собеседника, печатающего собеседника)
-const Message = ({avatar, user, text, date, isMe, isReaded, isTyping}) => {
+const Message = ({avatar, user, text, created_at, isMe, isReaded, isTyping}) => {
         return (
             <div className={classNames("message", {"message--isme" : isMe, "message--is-typing" : isTyping})}>
                 <div className="message__avatar">
-                     <img src={avatar} alt={`Avatar ${user.fullname}`}/>
+                    <Avatar user={user}/>
                 </div>
                 
                 <div className="message__content">
@@ -27,7 +28,7 @@ const Message = ({avatar, user, text, date, isMe, isReaded, isTyping}) => {
                         <p className="message__text">{text}</p>
                     </div>
 
-                    {date && <span className="message__date"><Time date={date}/></span>}
+                    {created_at && <span className="message__date"><Time date={created_at}/></span>}
                     
                 </div>
             </div>

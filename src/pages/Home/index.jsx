@@ -1,37 +1,23 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { TeamOutlined, FormOutlined, EllipsisOutlined } from "@ant-design/icons";
-import { Messages, Status, InputChat } from "components";
-import { Dialogs } from "containers";
-import dialogsJSON from 'dialogs.json'
-
+import { Status, InputChat, Sidebar } from "components";
+import { Dialogs, Messages } from "containers";
+import { Modal, Button, Space } from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 import './Home.scss'
+import { useState } from 'react';
 
 //главная страница im
+
 const Home = () => (
     <section className="home">
 
         <div className="chat">
-            <div className="chat__sidebar">
 
-                <div className="chat__sidebar-header">
-                    <div>
-                        <TeamOutlined />
-                        <span>Dialog list</span>
-                    </div>
-                    <FormOutlined className="chat__sidebar-header-searchicon" />
-                </div>
+            {/* Список диалогов, поиск среди своих, поиск среди всех */}
+            <Sidebar />
 
-                <div className="chat__sidebar-dialogs">
-                    <div className="dialogs">
-                        <Dialogs
-                            userId={0}
-                            items={dialogsJSON}
-                        />
-                    </div>
-                </div>
-
-            </div>
             <div className="chat__dialog">
                 <div className="chat__dialog-header">
                     <div />
