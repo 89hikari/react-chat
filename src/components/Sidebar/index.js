@@ -1,10 +1,13 @@
 import React, {useState} from 'react'
-import {Modal} from 'antd'
+import {Modal, Input } from 'antd'
 import {Dialogs} from '../../containers'
 import { TeamOutlined, FormOutlined } from "@ant-design/icons";
 
-const Sidebar = ({ user }) => {
+import './Sidebar.scss'
 
+const Sidebar = ({ user }) => {
+    const { Search } = Input;
+    const onSearch = value => console.log(value);
     const [visible, setVisible] = useState(false);
 
     const onClose = () => {
@@ -27,6 +30,7 @@ const Sidebar = ({ user }) => {
                         />
                     </div>
                     <Modal
+                        className="modal"
                         title="Search user"
                         visible={visible}
                         onOk={onClose}
@@ -34,9 +38,12 @@ const Sidebar = ({ user }) => {
                         okText="Search"
                         cancelText="Cancel"
                         >
-                        <p>Bla bla ...</p>
-                        <p>Bla bla ...</p>
-                        <p>Bla bla ...</p>
+                        <Search
+                            placeholder="input search text"
+                            allowClear
+                            onSearch={onSearch}
+                            style={{ width: '100%'}}
+                        />
                     </Modal>
                 </div>
             </div>
